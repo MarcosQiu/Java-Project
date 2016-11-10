@@ -4,7 +4,7 @@
  * and "Runs", so we need two methods here
  * 
  * 
- * 
+ * @author Yankun Qiu <yankunq@student.unimelb.edu.au>
  *
  */
 public class Cards {
