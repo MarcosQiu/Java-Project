@@ -7,6 +7,8 @@
  */
 
 public class Combinations {
+	
+	public static final int HAND_CARD_NUM = 4;
 
     /** This method computes all the combinations that contains
      *  only four elements from the input array, in this case, 
@@ -27,12 +29,12 @@ public class Combinations {
      *  
      */
     public static String[][] combinations(String[] lines) {
-    	int total = Mathematics.nOutOfM(4, lines.length);
+    	int total = Mathematics.nOutOfM(HAND_CARD_NUM, lines.length);
     	int flag = 0;
-    	String[][] result = new String[total][4];
-    	for(int i = 15;i <= 15<<(lines.length-4);i++){
+    	String[][] result = new String[total][HAND_CARD_NUM];
+    	for(int i = 15;i <= 15<<(lines.length-HAND_CARD_NUM);i++){
     		int count =0;
-    		if(Mathematics.oneInBinary(i) == 4){
+    		if(Mathematics.oneInBinary(i) == HAND_CARD_NUM){
     			int[] binary = Mathematics.deciToBinary(i, lines.length);
     			for(int j = 0;j < lines.length;j++){
     				if(binary[j] == 1){
@@ -42,7 +44,6 @@ public class Combinations {
     			flag++;
     		}
     	}
-    	
-		return result;
+	return result;
     }
 }
